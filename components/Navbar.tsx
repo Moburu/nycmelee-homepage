@@ -5,7 +5,7 @@ import * as React from "react";
 
 export default function Navbar() {
   return (
-    <header className="bg-zinc-800">
+    <header className="bg-zinc-800 sticky top-0 z-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="hidden md:block">
