@@ -1,12 +1,14 @@
-import * as React from "react";
+/* eslint-disable @next/next/no-img-element */
 
-// export interface IAppProps {
-// }
+import logo from '../public/logo.png';
 
 export default function Navbar() {
   return (
     <header className="bg-zinc-800 sticky top-0 z-50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="flex items-center justify-between mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div>
+          <img src={logo.src} alt="NYC Melee Logo" className="h-12 w-auto" />
+        </div>
         <div className="flex h-16 items-center justify-center">
           <div className="hidden md:block">
             <nav aria-label="Global">
@@ -71,6 +73,7 @@ export default function Navbar() {
             </nav>
           </div>
         </div>
+        <div>text</div>
       </div>
     </header>
   );
