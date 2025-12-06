@@ -1,42 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# nycmelee-homepage
 
-## Getting Started
+This is a small Next.js site for NYCMelee.
 
-First, install packages
+## Quick start
+
+1. Install dependencies
 
 ```bash
 npm install
 ```
 
-Then, run the development server:
+2. Run development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` — start Next.js dev server
+- `npm run build` — build for production
+- `npm run start` — run the production build
+- `npm run lint` — run Prettier check and ESLint
+- `npm run prettier:format` — auto-format with Prettier
+- `npm run prettier:check` — check formatting with Prettier
 
-## Learn More
+## Project notes
 
-To learn more about Next.js, take a look at the following resources:
+- Tailwind CSS is used for styling.
+- Pre-commit formatting is enabled via Husky and `pretty-quick` (staged files are auto-formatted).
+- The site uses the App Router (`app/`) and `next/font` for Google fonts.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Dev tips
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- If you add new top-level folders with JSX/TSX, update `tailwind.config.cjs` `content` to include them.
+- To quickly apply formatting and lint fixes locally:
 
-## Deploy on Vercel
+```bash
+npm run prettier:format
+npm run lint
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open a PR against `master`. CI runs Prettier checks — keep commits small and focused.
