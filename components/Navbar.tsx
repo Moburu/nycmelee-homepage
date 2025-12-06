@@ -1,13 +1,17 @@
-/* eslint-disable @next/next/no-img-element */
-
-import logo from "../public/logo.png";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
     <header className="bg-zinc-800 sticky top-0 z-50">
       <div className="flex items-center justify-between mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div>
-          <img src={logo.src} alt="NYC Melee Logo" className="h-12 w-auto" />
+          <Image
+            src="/logo.png"
+            alt="NYC Melee Logo"
+            width={48}
+            height={48}
+            className="h-12 w-auto"
+          />
         </div>
         <div className="flex h-16 items-center justify-center">
           <div className="hidden md:block">
