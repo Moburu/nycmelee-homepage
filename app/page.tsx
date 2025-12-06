@@ -1,30 +1,53 @@
 import Banner from "@/components/Banner";
-
+import EmailIcon from "@mui/icons-material/Email";
+import LinkWithIcon from "../components/LinkWithIcon";
+import SavingsIcon from "@mui/icons-material/Savings";
+import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-stretch justify-start bg-zinc-800 sm:items-start">
+    <main className="flex min-h-screen w-full flex-col items-start justify-start bg-zinc-800">
       <Banner />
-      {/* <div className="flex flex-col gap-4 text-white justify-center items-center bg-blue-500 w-full h-[400px]">
-        <h1 className="text-6xl">NYCMelee</h1>
-        <h2 className="text-3xl">
-          Hosts of Stock Exchange, The Function, and more!
-        </h2>
-      </div> */}
+
       <div className="grid grid-cols-3 grid-rows-1 gap-4 text-white items-center justify-center bg-red-500 w-full h-[400px]">
         <h1 className="text-6xl text-center">NYCMelee</h1>
         <h1 className="text-6xl text-center">NYCMelee</h1>
         <h1 className="text-6xl text-center">NYCMelee</h1>
       </div>
+
       <div className="flex flex-row gap-4 text-white justify-around items-center bg-green-500 w-full h-[400px]">
         <h1 className="text-6xl">Article</h1>
         <h1 className="text-6xl">Article</h1>
         <h1 className="text-6xl">Article</h1>
       </div>
+
       <div className="flex flex-row gap-4 text-white justify-around items-center bg-violet-500 w-full h-[400px]">
-        <p className="text-3xl">Discord</p>
-        <p className="text-3xl">Twitter</p>
-        <p className="text-3xl">YouTube</p>
-        <p className="text-3xl">Email</p>
+        <LinkWithIcon
+          href="https://twitter.com/NYCMelee"
+          label="Twitter"
+          icon={<TwitterIcon />}
+        />
+        <LinkWithIcon
+          href="https://www.youtube.com/@NYCMelee"
+          label="Youtube"
+          icon={<YouTubeIcon />}
+        />
+        <LinkWithIcon
+          href="https://discord.gg/g87pFQRc"
+          label="Discord"
+          icon={<SportsEsportsIcon />}
+        />
+        <LinkWithIcon
+          href="newyorkcitymelee@gmail.com"
+          label="Email"
+          icon={<EmailIcon />}
+        />
+        <LinkWithIcon
+          href="https://www.buymeacoffee.com/nycmelee"
+          label="Support"
+          icon={<SavingsIcon />}
+        />
       </div>
     </main>
   );
