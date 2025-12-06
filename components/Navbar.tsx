@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-import logo from '../public/logo.png';
+import logo from "../public/logo.png";
 
 export default function Navbar() {
   return (
