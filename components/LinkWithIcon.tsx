@@ -22,7 +22,7 @@ export default function LinkWithIcon({
       component={Link}
       href={href}
       underline="none"
-      className={className}
+      className={className + " !text-xl"}
       color="inherit"
       sx={{
         display: "inline-flex",
