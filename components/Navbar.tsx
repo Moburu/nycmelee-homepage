@@ -1,4 +1,13 @@
 import Image from "next/image";
+import LinkWithIcon from "./LinkWithIcon";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import ConnectedTvIcon from "@mui/icons-material/ConnectedTv";
+import EmailIcon from "@mui/icons-material/Email";
+import SavingsIcon from "@mui/icons-material/Savings";
+import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
+import SmsFailedIcon from "@mui/icons-material/SmsFailed";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 
 export default function Navbar() {
   return (
@@ -13,71 +22,48 @@ export default function Navbar() {
             className="h-12 w-auto"
           />
         </div>
-        <div className="flex h-16 items-center justify-center">
-          <div className="hidden md:block">
-            <nav aria-label="Global">
-              <ul className="flex items-center gap-6 text-sm">
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                    href="#"
-                  >
-                    About
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                    href="#"
-                  >
-                    Events
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                    href="#"
-                  >
-                    Replays
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                    href="https://www.youtube.com/c/NYCMelee"
-                    target="_blank"
-                  >
-                    YouTube
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                    href="https://www.twitch.tv/nycmelee"
-                    target="_blank"
-                  >
-                    Twitch
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                    href="https://discord.gg/2aRQ5UUK"
-                    target="_blank"
-                  >
-                    Discord
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+        <div className="flex flex-row gap-2 text-white justify-around items-center w-full">
+          <LinkWithIcon
+            href="/events"
+            label="Events"
+            icon={<CalendarMonthIcon />}
+          />
+          <LinkWithIcon
+            href="/replays"
+            label="Replays"
+            icon={<ConnectedTvIcon />}
+          />
+          <LinkWithIcon
+            href="https://twitter.com/NYCMelee"
+            label="Twitter"
+            icon={<TwitterIcon />}
+          />
+          <LinkWithIcon
+            href="https://www.youtube.com/@NYCMelee"
+            label="Youtube"
+            icon={<YouTubeIcon />}
+          />
+          <LinkWithIcon
+            href="https://www.twitch.tv/nycmelee"
+            label="Twitch"
+            icon={<SmsFailedIcon />}
+          />
+          <LinkWithIcon
+            href="https://discord.gg/v4swpxrU"
+            label="Discord"
+            icon={<SportsEsportsIcon />}
+          />
+          <LinkWithIcon
+            href="newyorkcitymelee@gmail.com"
+            label="Email"
+            icon={<EmailIcon />}
+          />
+          <LinkWithIcon
+            href="https://www.buymeacoffee.com/nycmelee"
+            label="Support"
+            icon={<SavingsIcon />}
+          />
         </div>
-        <div>text</div>
       </div>
     </header>
   );
