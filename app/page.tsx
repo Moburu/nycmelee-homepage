@@ -1,7 +1,23 @@
+'use client';
+
 import Banner from "@/components/Banner";
 import banner from "../public/banner.jpeg";
+import { createClient } from '../lib/supabase/client';
+import { useEffect } from "react";
 
 export default function Home() {
+  const supabase = createClient();
+
+  useEffect(() => {
+    const testSupabaseConnection = async () => {
+      const { data, error } = await supabase.from('replays').select('*');
+      if (data) {
+        console.log("Supabase connection successful:", data);
+      }
+    }
+    testSupabaseConnection();
+  })
+
   return (
     <main>
       <div
