@@ -24,9 +24,9 @@ export default function StartGGEventInfo() {
         // Fetch data from your secure Next.js API route
         const res = await fetch(`/api/event-data?slug=${EVENT_SLUG}`);
         const data = await res.json();
-        
+
         console.log("API Response:", data);
-        
+
         if (!res.ok || data.error) {
           setError(data.error || `HTTP ${res.status}`);
           setEventData(null);
