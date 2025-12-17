@@ -8,11 +8,13 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@google-cloud/local-auth": "^2.1.0",
     "@mui/icons-material": "^7.3.6",
     "@mui/material": "^7.3.6",
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "latest",
     "geist": "^1.2.1",
+    "googleapis": "^105.0.0",
     "mui": "^0.0.1",
     "next": "latest",
     "react": "18.2.0",
