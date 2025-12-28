@@ -1,40 +1,38 @@
 {
-  "name": "nycmelee-homepage",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "prettier --check . && eslint --ext .ts,.tsx,.js,.jsx .",
-    "prettier:format": "prettier --write .",
-    "prettier:check": "prettier --check ."
+    "start": "next start"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
+  "browser":{
+    "child_process": false
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@google-cloud/local-auth": "^2.1.0",
     "@mui/icons-material": "^7.3.6",
     "@mui/material": "^7.3.6",
-    "next": "16.0.6",
-    "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "latest",
+    "geist": "^1.2.1",
+    "googleapis": "^105.0.0",
+    "mui": "^0.0.1",
+    "next": "latest",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-simple-tree-menu": "^1.1.18",
+    "typescript": "5.3.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.0.6",
-    "husky": "^9.1.7",
-    "prettier": "3.7.3",
-    "pretty-quick": "^4.2.2",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "@tailwindcss/postcss": "^4.1.17",
+    "@types/node": "20.11.5",
+    "@types/react": "18.2.48",
+    "@types/react-dom": "18.2.18",
+    "autoprefixer": "^10.4.22",
+    "encoding": "^0.1.13",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17"
   }
 }
