@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import { Database } from '@/database.types';
 import replays from  '../../database/replays.json';
 import TreeMenu, { defaultChildren, ItemComponent } from 'react-simple-tree-menu';
 import { TreeMenuProps } from 'react-simple-tree-menu';
@@ -27,6 +26,7 @@ export default function Replays() {
             };
             dataHolder.push(tournamentNode);
         }
+        // const sortedData = dataHolder.sort((a, b) => a.label.localeCompare(b.label));
         setTreeData(dataHolder);
     }, [])
 
@@ -42,16 +42,18 @@ export default function Replays() {
                     />
                     <ul>
                         {items.map(({key, ...props}) => (
-                            <ItemComponent
-                                key={key}
-                                style={{
-                                    fontSize: '16px',
-                                    border: '1px solid #ccc',
-                                    margin: '5px',
-                                    padding: '5px',
-                                }}
-                                {...props}
-                            />
+                            <a href={props.url} target="_blank" rel="noopener noreferrer">
+                                <ItemComponent
+                                    key={key}
+                                    style={{
+                                        fontSize: '16px',
+                                        border: '1px solid #ccc',
+                                        margin: '5px',
+                                        padding: '5px',
+                                    }}
+                                    {...props}
+                                />
+                            </a>
                         ))}
                     </ul>
                 </div>
