@@ -2,17 +2,8 @@
 
 import Banner from "@/components/Banner";
 import banner from "../public/banner.jpeg";
-import { listFiles } from "@/database/api";
-import { useEffect } from "react";
 
 export default function Home() {
-  useEffect (() => {
-    const fetchFiles = async () => {
-      await listFiles();
-    }
-    fetchFiles();
-  }, []);
-
   return (
     <main>
       <div
