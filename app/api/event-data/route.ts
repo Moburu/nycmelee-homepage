@@ -101,14 +101,20 @@ export async function GET(request: NextRequest) {
     const tournament = startGgData?.data?.tournament;
     if (!tournament) {
       console.warn(`No tournament data found for slug: ${slug}`);
-      return NextResponse.json({ error: "Tournament not found." }, { status: 404 });
+      return NextResponse.json(
+        { error: "Tournament not found." },
+        { status: 404 },
+      );
     }
 
     // Get the first event (or modify this logic to select a specific event)
     const event = tournament.events?.[0];
     if (!event) {
       console.warn(`No events found for tournament: ${slug}`);
-      return NextResponse.json({ error: "No events found for tournament." }, { status: 404 });
+      return NextResponse.json(
+        { error: "No events found for tournament." },
+        { status: 404 },
+      );
     }
 
     // Map Start.gg response to your desired EventData structure
