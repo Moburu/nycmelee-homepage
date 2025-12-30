@@ -4,6 +4,8 @@ import Banner from "@/components/Banner";
 import banner from "../public/banner.jpeg";
 import StartGGHomePage from "@/components/StartGGHomePage";
 
+// credit tori in the footer for the background image
+
 export default function Home() {
   return (
     <main>
