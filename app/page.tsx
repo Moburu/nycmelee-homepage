@@ -13,9 +13,11 @@ export default function Home() {
           <Banner />
           <StartGGHomePage />
           <div className="flex flex-row gap-4 text-white justify-around items-center w-full h-[400px]">
-            <h1 className="text-6xl">Article</h1>
-            <h1 className="text-6xl">Article</h1>
-            <h1 className="text-6xl">Article</h1>
+            <h1 className="text-6xl">NYSE Logo/ hyperlink to sgg</h1>
+            <h1 className="text-6xl">
+              NYSE Signup link / weekly metrics / first time FAQ
+            </h1>
+            <h1 className="text-6xl">Twitch / YT preview?</h1>
           </div>
         </div>
       </div>
