@@ -44,30 +44,29 @@ export default function StartGGEventInfo() {
     fetchData();
   }, []);
 
-  return (
-    <div>
-      <h1>Next.js Start.gg Event Viewer</h1>
-
-      <h1>Next Stock exchange local is running on :date: at :time:</h1>
-      <h1>entrant count</h1>
-    </div>
-  );
-
   // return (
   //   <div>
   //     <h1>Next.js Start.gg Event Viewer</h1>
-  //     {error ? (
-  //       <p style={{ color: "red" }}>Error: {error}</p>
-  //     ) : eventData && eventData.tournament && eventData.name ? (
-  //       <>
-  //         <h2>Tournament: {eventData.tournament.name}</h2>
-  //         <h3>Event: {eventData.name}</h3>
-  //         <p>Entrants: {eventData.numEntrants}</p>
-  //       </>
-  //     ) : (
 
-  //       <p>Loading event data...</p>
-  //     )}
+  //     <h1>Next Stock exchange local is running on :date: at :time:</h1>
+  //     <h1>entrant count</h1>
   //   </div>
   // );
+
+  return (
+    <div>
+      <h1>Next.js Start.gg Event Viewer</h1>
+      {error ? (
+        <p style={{ color: "red" }}>Error: {error}</p>
+      ) : eventData && eventData.tournament && eventData.name ? (
+        <>
+          <h2>Tournament: {eventData.tournament.name}</h2>
+          <h3>Event: {eventData.name}</h3>
+          <p>Entrants: {eventData.numEntrants}</p>
+        </>
+      ) : (
+        <p>Loading event data...</p>
+      )}
+    </div>
+  );
 }

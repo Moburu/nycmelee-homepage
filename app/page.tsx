@@ -1,6 +1,7 @@
 import Banner from "@/components/Banner";
 import banner from "../public/banner.jpeg";
 import StartGGHomePage from "@/components/StartGGHomePage";
+import StartGGEventInfo from "@/components/StartGGEventInfo";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
             <h1 className="text-6xl">
               NYSE Signup link / weekly metrics / first time FAQ
             </h1>
+            <StartGGEventInfo />
             <h1 className="text-6xl">Twitch / YT preview?</h1>
           </div>
         </div>
