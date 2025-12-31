@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Banner from "@/components/Banner";
 import banner from "../public/banner.jpeg";

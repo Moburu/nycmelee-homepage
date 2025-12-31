@@ -3,9 +3,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "prettier --check . && eslint --ext .ts,.tsx,.js,.jsx .",
+    "prettier:format": "prettier --write .",
+    "prettier:check": "prettier --check ."
   },
-  "browser":{
+  "browser": {
     "child_process": false
   },
   "dependencies": {
@@ -33,6 +36,7 @@
     "autoprefixer": "^10.4.22",
     "encoding": "^0.1.13",
     "postcss": "^8.5.6",
+    "prettier": "^3.7.4",
     "tailwindcss": "^4.1.17"
   }
 }
