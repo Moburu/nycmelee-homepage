@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import MapIcon from "@mui/icons-material/Map";
 
 // Access the public variable prefixed with NEXT_PUBLIC_
 const EVENT_SLUG = "nyse";
@@ -9,6 +10,7 @@ const EVENT_SLUG = "nyse";
 interface EventData {
   tournament?: {
     name: string;
+    venueAddress?: string;
   };
   name?: string;
   numEntrants?: number;
@@ -69,6 +71,17 @@ export default function StartGGEventInfo() {
             <p className="text-2xl">
               {eventData.numEntrants.toLocaleString()} entrants
             </p>
+          )}
+          {eventData?.tournament.venueAddress && (
+            <span className="flex items-center gap-2">
+              <MapIcon fontSize="large" />
+              <Link
+                href={`http://maps.google.com/?q=${encodeURIComponent(eventData?.tournament.venueAddress)}`}
+                className="map-link"
+              >
+                <p className="text-2xl">{eventData.tournament.venueAddress}</p>
+              </Link>
+            </span>
           )}
         </div>
       ) : (

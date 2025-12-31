@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 type EventData = {
   tournament: {
     name: string;
+    venueAddress?: string;
   };
   name: string;
   numEntrants: number;
@@ -43,6 +44,7 @@ export async function GET(request: NextRequest) {
         tournament(slug: $slug) {
           id
           name
+          venueAddress
           events {
             id
             name
@@ -121,6 +123,7 @@ export async function GET(request: NextRequest) {
     const formattedEventData: EventData = {
       tournament: {
         name: tournament.name,
+        venueAddress: tournament.venueAddress,
       },
       name: event.name,
       numEntrants: event.numEntrants,
