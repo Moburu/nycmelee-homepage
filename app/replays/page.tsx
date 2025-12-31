@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import replays from  '../../database/replays.json';
+import tournaments from '../../database/tournaments.json';
 import TreeMenu, { defaultChildren, ItemComponent } from 'react-simple-tree-menu';
 import { TreeMenuProps } from 'react-simple-tree-menu';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
@@ -14,10 +15,14 @@ export default function Replays() {
 
     useEffect(() => {
         const dataHolder = [];
-        // Get unique tournaments
-        const tournamentList = new Set(replays.map(replay => replay.tournament));
-        for (const tournament of tournamentList) {
-            const filteredReplays = replays.filter(replay => replay.tournament === tournament);
+
+        // Sort tournaments by date
+        const sortedTournamentList = tournaments.sort((a, b) => {
+            return new Date(b.createdTime).getTime() - new Date(a.createdTime).getTime();
+        });
+
+        for (const tournament of sortedTournamentList) {
+            const filteredReplays = replays.filter(replay => replay.tournament === tournament.name);
             // Make an array of child nodes for each replay in the given tournament
             const replayNodes = filteredReplays.map(replay => ({
                 key: replay.name,
@@ -26,8 +31,8 @@ export default function Replays() {
             }));    
             // Make a parent node for the given tournament
             const tournamentNode = {
-                key: tournament,
-                label: tournament,
+                key: tournament.name,
+                label: tournament.name,
                 nodes: replayNodes,
             };
             dataHolder.push(tournamentNode);
