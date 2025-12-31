@@ -1,5 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import MapIcon from "@mui/icons-material/Map";
 
 // Access the public variable prefixed with NEXT_PUBLIC_
 const EVENT_SLUG = "nyse";
@@ -7,6 +10,7 @@ const EVENT_SLUG = "nyse";
 interface EventData {
   tournament?: {
     name: string;
+    venueAddress?: string;
   };
   name?: string;
   numEntrants?: number;
@@ -45,18 +49,45 @@ export default function StartGGEventInfo() {
   }, []);
 
   return (
-    <div>
-      <h1>Next.js Start.gg Event Viewer</h1>
+    <div className="event-info">
       {error ? (
-        <p style={{ color: "red" }}>Error: {error}</p>
-      ) : eventData && eventData.tournament && eventData.name ? (
-        <>
-          <h2>Tournament: {eventData.tournament.name}</h2>
-          <h3>Event: {eventData.name}</h3>
-          <p>Entrants: {eventData.numEntrants}</p>
-        </>
+        <div className="error-message">
+          <div className="rounded-lg bg-red-50 border border-red-200 p-4">
+            <p className="text-red-700 font-semibold flex items-center gap-2">
+              <span className="text-lg">⚠️</span>
+              <span>Error: {error}</span>
+            </p>
+          </div>
+        </div>
+      ) : eventData?.tournament?.name && eventData?.name ? (
+        <div className="event-details">
+          <Link href="https://www.start.gg/nyse" className="event-link">
+            <span className="flex items-center gap-2">
+              <OpenInNewIcon fontSize="large" />
+              <h2 className="text-4xl">{eventData.tournament.name}</h2>
+            </span>
+          </Link>
+          {eventData.numEntrants && (
+            <p className="text-2xl">
+              {eventData.numEntrants.toLocaleString()} entrants
+            </p>
+          )}
+          {eventData?.tournament.venueAddress && (
+            <span className="flex items-center gap-2">
+              <MapIcon fontSize="large" />
+              <Link
+                href={`http://maps.google.com/?q=${encodeURIComponent(eventData?.tournament.venueAddress)}`}
+                className="map-link"
+              >
+                <p className="text-2xl">{eventData.tournament.venueAddress}</p>
+              </Link>
+            </span>
+          )}
+        </div>
       ) : (
-        <p>Loading event data...</p>
+        <div className="loading">
+          <p>Loading event data...</p>
+        </div>
       )}
     </div>
   );
