@@ -5,6 +5,8 @@ import replays from  '../../database/replays.json';
 import TreeMenu, { defaultChildren, ItemComponent } from 'react-simple-tree-menu';
 import { TreeMenuProps } from 'react-simple-tree-menu';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import FolderIcon from '@mui/icons-material/Folder';
+import DescriptionIcon from '@mui/icons-material/Description';
 
 export default function Replays() {
     const [treeData, setTreeData] = useState<TreeMenuProps['data']>([]);
@@ -36,26 +38,36 @@ export default function Replays() {
 
     return (
         <div>
-            <TreeMenu data={treeData}>
+            <TreeMenu 
+                data={treeData}
+            >
             {({ search, items, resetOpenNodes }) => (
-                <div className="w-1/2 mx-auto my-10">
+                <div className="w-1/2 mx-auto mt-10">
                     <input
                         onChange={e => search && search(e.target.value)}
-                        placeholder="Type and search"
+                        placeholder="Search for a tag or a character..."
                         className="w-full p-2 mb-4 border border-gray-300 rounded"
                     />
-                    <ul>
-                        {items.map(({key, ...props}) => (
+                    <ul className="list-none">
+                        {items.map(({key, ...props}, index) => (
                             props.url ? (
-                            <a href={props.url} target="_blank" rel="noopener noreferrer">
-                                <div className="flex w-full items-center">
+                            // File
+                            <a href={props.url} target="_blank" rel="noopener noreferrer" className="no-underline text-inherit">
+                                <div 
+                                    className="flex w-full items-center"
+                                    style={{
+                                        backgroundColor: index % 2 === 0 ? '#a305ff27' : '#0000005b',
+                                    }}
+                                >
+                                    <DescriptionIcon />
                                     <ItemComponent
                                         key={key}
                                         style={{
                                             fontSize: '16px',
-                                            borderBottom: '1px solid #ccc',
                                             margin: '5px',
                                             padding: '5px',
+                                            paddingLeft: `${props.level * 20}px`,
+                                            cursor: 'pointer'
                                         }}
                                         {...props}
                                     />
@@ -63,14 +75,24 @@ export default function Replays() {
                                 </div>
                             </a>
                             ) : (
-                            <div className="flex w-full items-center">
+                            // Folder
+                            <div 
+                                className="flex w-full items-center"
+                                style={{
+                                    backgroundColor: index % 2 === 0 ? '#a305ff27' : '#0000005b',
+                                }}
+                            >
+                                <FolderIcon />
                                 <ItemComponent
                                     key={key}
                                     style={{
+                                        display: 'flex',
+                                        gap: '5px',
                                         fontSize: '16px',
-                                        borderBottom: '1px solid #ccc',
                                         margin: '5px',
                                         padding: '5px',
+                                        paddingLeft: `${props.level * 20}px`,
+                                        cursor: 'default',
                                     }}
                                     {...props}
                                 />
