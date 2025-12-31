@@ -3,9 +3,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "prettier --check . && eslint --ext .ts,.tsx,.js,.jsx .",
+    "prettier:format": "prettier --write .",
+    "prettier:check": "prettier --check ."
   },
-  "browser":{
+  "browser": {
     "child_process": false
   },
   "dependencies": {
