@@ -5,8 +5,6 @@ import Image from "next/image";
 import LinkWithIcon from "./LinkWithIcon";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import ConnectedTvIcon from "@mui/icons-material/ConnectedTv";
-import EmailIcon from "@mui/icons-material/Email";
-import SavingsIcon from "@mui/icons-material/Savings";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import SmsFailedIcon from "@mui/icons-material/SmsFailed";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -45,16 +43,6 @@ const navLinks = [
     href: "https://discord.gg/v4swpxrU",
     label: "Discord",
     icon: <SportsEsportsIcon />,
-  },
-  {
-    href: "newyorkcitymelee@gmail.com",
-    label: "Email",
-    icon: <EmailIcon />,
-  },
-  {
-    href: "https://www.buymeacoffee.com/nycmelee",
-    label: "Support",
-    icon: <SavingsIcon />,
   },
 ];
 
